@@ -1,0 +1,21 @@
+<h2>訂單列表 </h2>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>生成時間</th>
+
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @orders.each do |order| %>
+    <tr>
+      <td> <%= link_to(order.id, order_path(order.token)) %> </td>
+      <td> <%= order.created_at.year %>年<%= order.created_at.month %>月<%= order.created_at.day %>日 </td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>
